@@ -27,7 +27,7 @@ cd demo
 
 Avec IntelliJ :
 - Ouvrir le projet
-- Cliquer sur ▶ Run `DemoApplication`
+- Cliquer sur Run `DemoApplication`
 
 Avec Maven :
 bash
