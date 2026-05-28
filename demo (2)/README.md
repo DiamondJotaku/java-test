@@ -36,12 +36,14 @@ mvn spring-boot:run
 
 3. Vérifier que le serveur est démarré
 
+```
 Started on port(s): 8080
 Started DemoApplication
+```
 
 ---
 
-URLs disponibles
+### URLs disponibles
 
 | URL | Description |
 |-----|-------------|
@@ -55,16 +57,16 @@ URLs disponibles
 
 ---
 
-Description des fonctionnalités
+## Description des fonctionnalités
 
-Authentification (`/api/auth`)
+### Authentification (`/api/auth`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
 | POST | `/api/auth/register` | Inscription d'un nouvel utilisateur | ❌ Public |
 | POST | `/api/auth/login` | Connexion, retourne un JWT | ❌ Public |
 
-Produits (`/api/products`)
+### Produits (`/api/products`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
@@ -72,21 +74,21 @@ Produits (`/api/products`)
 | GET | `/api/products/{id}` | Détail d'un produit | ❌ Public |
 | GET | `/api/products/search?query=xxx` | Recherche par nom ou catégorie | ❌ Public |
 
-Utilisateur (`/api/user`)
+### Utilisateur (`/api/user`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
 | GET | `/api/user/profile` | Voir son profil | ✅ USER / ADMIN |
 | PUT | `/api/user/profile` | Modifier son profil | ✅ USER / ADMIN |
 
-Commandes (`/api/orders`)
+### Commandes (`/api/orders`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
 | POST | `/api/orders` | Créer une commande | ✅ USER / ADMIN |
 | GET | `/api/orders/my-orders` | Voir ses commandes | ✅ USER / ADMIN |
 
-Administration (`/api/admin`)
+### Administration (`/api/admin`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
@@ -98,9 +100,9 @@ Administration (`/api/admin`)
 
 ---
 
-Structure de la base de données
+## Structure de la base de données
 
-Table `USERS`
+### Table `USERS`
 | Colonne | Type | Description |
 |---------|------|-------------|
 | `id` | BIGINT | Clé primaire auto-incrémentée |
@@ -111,13 +113,13 @@ Table `USERS`
 | `enabled` | BOOLEAN | Compte actif ou non |
 | `created_at` | TIMESTAMP | Date de création |
 
-Table `CATEGORIE`
+### Table `CATEGORIE`
 | Colonne | Type | Description |
 |---------|------|-------------|
 | `id` | BIGINT | Clé primaire auto-incrémentée |
 | `name` | VARCHAR | Nom de la catégorie |
 
-Table `PRODUCT`
+### Table `PRODUCT`
 | Colonne | Type | Description |
 |---------|------|-------------|
 | `id` | BIGINT | Clé primaire auto-incrémentée |
@@ -129,7 +131,7 @@ Table `PRODUCT`
 | `lien_image` | VARCHAR | URL de l'image |
 | `created_at` | TIMESTAMP | Date de création |
 
-Table `ORDERS`
+### Table `ORDERS`
 | Colonne | Type | Description |
 |---------|------|-------------|
 | `id` | BIGINT | Clé primaire auto-incrémentée |
@@ -140,7 +142,7 @@ Table `ORDERS`
 | `status` | VARCHAR | `PENDING`, `PROCESSING`, `SHIPPED`, `DELIVERED` |
 | `quantite` | INTEGER | Quantité commandée |
 
-Schéma des relations
+#### Schéma des relations
 
 CATEGORIE (1) ──────< PRODUCT (N)
 USERS     (1) ──────< ORDERS  (N)
