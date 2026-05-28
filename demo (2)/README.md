@@ -1,4 +1,4 @@
-Backend Spring Boot
+# Backend Spring Boot
 
 Application backend complète avec authentification JWT, gestion des produits, commandes et utilisateurs.
 
