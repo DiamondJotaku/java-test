@@ -4,7 +4,7 @@ Application backend complète avec authentification JWT, gestion des produits, c
 
 ---
 
-## 📋 Prérequis
+## Prérequis
 
 - Java 17+
 - Maven 3.8+
