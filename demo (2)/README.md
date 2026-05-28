@@ -13,13 +13,15 @@ Application backend complète avec authentification JWT, gestion des produits, c
 
 ---
 
-Installation et exécution
+### Installation et exécution
 
 1. Cloner ou télécharger le projet
 
+```
 bash
 git clone https://github.com/ton-repo/demo.git
 cd demo
+```
 
 2. Lancer le projet
 
