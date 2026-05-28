@@ -63,40 +63,40 @@ Started DemoApplication
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
-| POST | `/api/auth/register` | Inscription d'un nouvel utilisateur | ❌ Public |
-| POST | `/api/auth/login` | Connexion, retourne un JWT | ❌ Public |
+| POST | `/api/auth/register` | Inscription d'un nouvel utilisateur | Public |
+| POST | `/api/auth/login` | Connexion, retourne un JWT | Public |
 
 ### Produits (`/api/products`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
-| GET | `/api/products` | Liste tous les produits (paginé) | ❌ Public |
-| GET | `/api/products/{id}` | Détail d'un produit | ❌ Public |
-| GET | `/api/products/search?query=xxx` | Recherche par nom ou catégorie | ❌ Public |
+| GET | `/api/products` | Liste tous les produits (paginé) | Public |
+| GET | `/api/products/{id}` | Détail d'un produit | Public |
+| GET | `/api/products/search?query=xxx` | Recherche par nom ou catégorie | Public |
 
 ### Utilisateur (`/api/user`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
-| GET | `/api/user/profile` | Voir son profil | ✅ USER / ADMIN |
-| PUT | `/api/user/profile` | Modifier son profil | ✅ USER / ADMIN |
+| GET | `/api/user/profile` | Voir son profil | USER / ADMIN |
+| PUT | `/api/user/profile` | Modifier son profil | USER / ADMIN |
 
 ### Commandes (`/api/orders`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
-| POST | `/api/orders` | Créer une commande | ✅ USER / ADMIN |
-| GET | `/api/orders/my-orders` | Voir ses commandes | ✅ USER / ADMIN |
+| POST | `/api/orders` | Créer une commande | USER / ADMIN |
+| GET | `/api/orders/my-orders` | Voir ses commandes | USER / ADMIN |
 
 ### Administration (`/api/admin`)
 
 | Méthode | Endpoint | Description | Auth |
 |---------|----------|-------------|------|
-| POST | `/api/admin/products` | Créer un produit | ✅ ADMIN |
-| PUT | `/api/admin/products/{id}` | Modifier un produit | ✅ ADMIN |
-| DELETE | `/api/admin/products/{id}` | Supprimer un produit | ✅ ADMIN |
-| GET | `/api/admin/users` | Lister tous les utilisateurs | ✅ ADMIN |
-| PUT | `/api/admin/users/{id}` | Modifier un utilisateur | ✅ ADMIN |
+| POST | `/api/admin/products` | Créer un produit | ADMIN |
+| PUT | `/api/admin/products/{id}` | Modifier un produit | ADMIN |
+| DELETE | `/api/admin/products/{id}` | Supprimer un produit | ADMIN |
+| GET | `/api/admin/users` | Lister tous les utilisateurs | ADMIN |
+| PUT | `/api/admin/users/{id}` | Modifier un utilisateur | ADMIN |
 
 ---
 
@@ -150,7 +150,7 @@ PRODUCT   (1) ──────< ORDERS  (N)
 
 ---
 
-Comptes de test
+#### Comptes de test
 
 | Username | Password | Rôle | Accès |
 |----------|----------|------|-------|
@@ -159,9 +159,9 @@ Comptes de test
 
 ---
 
-Collection Postman
+## Collection Postman
 
-Importer la collection
+### Importer la collection
 
 Copie ce JSON et importe-le dans Postman via **File → Import → Raw Text** :
 
@@ -327,7 +327,7 @@ Copie ce JSON et importe-le dans Postman via **File → Import → Raw Text** :
 }
 ```
 
-Utilisation du token
+### Utilisation du token
 
 Après un **Login**, copie le token de la réponse et :
 1. Va dans **Collection → Variables**
@@ -336,7 +336,7 @@ Après un **Login**, copie le token de la réponse et :
 
 ---
 
-Structure du projet
+## Structure du projet
 
 ```
 src/main/java/com/example/demo/
@@ -385,7 +385,7 @@ src/main/resources/
 
 ---
 
-Sécurité
+## Sécurité
 
 - Mots de passe hashés avec **BCrypt**
 - Authentification sans état via **JWT** (valide 24h)
